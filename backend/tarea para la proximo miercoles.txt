@@ -1,0 +1,30 @@
+
+
+Fecha Limite miercoles 21/02/2024 y proxima reunion
+
+tareas
+
+Crear Routes y llamarlo en index.js.
+
+Jose Maria Cliente, Empleado.
+Keren Mesa, Plato.
+Alana Orden, Detalleorden.
+Lennin Usuario, Rol.
+
+ojo falta desglosar muy bien lo de la reserva online.
+
+
+
+------------------------------
+librerias utilizadas.
+express.
+nodemon.
+-------------------------------
+
+
+---------------------------------
+libreria a utilizar el miercoles 21/02/2024
+mongoose.
+dotenv.
+---------------------------------
+
