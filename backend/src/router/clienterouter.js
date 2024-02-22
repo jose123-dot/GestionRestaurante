@@ -1,38 +1,25 @@
 import express from "express";
 const clienterouters = express.Router();
+import clienteController from "../Controller/cliente-controller.js";
 
-//ver de datalles del cliente
-clienterouters.get("/", (req, res) => {
-  res.send("Ver Cliente");
-});
+clienterouters.get("/", clienteController.verCliente);
 
-//ver interfaz grafica de agregar cliente
+clienterouters.get("/agregar", clienteController.AgregarClienteVista);
 
-clienterouters.get("/agregar", (req, res) => {
-  res.send(" Agregar Cliente");
-});
+clienterouters.post("/agregar", clienteController.AgregarCliente);
 
-clienterouters.post("/agregar", (req, res) => {
-  res.send(" Agregar Cliente");
-});
+clienterouters.get(
+  "/eliminar/cliente:id",
+  clienteController.EliminarClienteVista
+);
 
-//eliminar cliente
-clienterouters.get("/eliminar/cliente:id", (req, res) => {
-  res.send(" Eliminar Cliente");
-});
+clienterouters.delete(
+  "/eliminar/cliente:id",
+  clienteController.EliminarCliente
+);
 
-clienterouters.delete("/eliminar/cliente:id", (req, res) => {
-  res.send("Eliminar Cliente");
-});
+clienterouters.put("/Editar/cliente:id", clienteController.EditarCliente);
 
-//editar cliente
-
-clienterouters.put("/Editar/cliente:id", (req, res) => {
-  res.send(" Editar Cliente");
-});
-
-clienterouters.get("/Editar/cliente:id", (req, res) => {
-  res.send(" Editar Cliente");
-});
+clienterouters.get("/Editar/cliente:id", clienteController.EditarClienteVista);
 
 export default clienterouters;
