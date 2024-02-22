@@ -6,6 +6,8 @@ import clienterouters from "./router/clienterouter.js";
 import empleadorouters from "./router/empleado-router.js";
 import ordenrouters from "./router/ordenrouter.js";
 import detalleordenrouters from "./router/detalleordenrouter.js";
+import usuariorouters from "./router/usuariorouter.js";
+import rolrouters from "./router/rolrouter.js";
 //iniciar puerto principal
 
 //routes
