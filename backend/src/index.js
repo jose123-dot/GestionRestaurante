@@ -1,9 +1,13 @@
-const express = require("express");
+import express from "express";
 const app = express();
 
+import indexrouters from "./router/indexrouter.js";
+import clienterouters from "./router/clienterouter.js";
 //iniciar puerto principal
 
-app.use(require("./router/cliente-router"));
+//routes
+app.use("/", indexrouters);
+app.use("/api/cliente/", clienterouters);
 
 // toca hacer los router de los demas
-TODO: app.listen(4000, () => console.log("Servidor ejecutado"));
+app.listen(4000, () => console.log("Servidor ejecutado"));
