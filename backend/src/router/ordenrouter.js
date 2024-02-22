@@ -20,6 +20,4 @@ ordenrouters.delete(
 
 ordenrouters.put("/Editar/orden:id", ordenController.EditarOrden);
 
-ordenrouters.get("/Editar/orden:id", ordenController.EditarOrdenVista);
-
 export default ordenrouters;

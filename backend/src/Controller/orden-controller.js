@@ -21,11 +21,12 @@ OrdenController.EliminarOrden = (req, res) => {
 };
 
 OrdenController.EditarOrdenVista = (req, res) => {
-  res.send("editar Orden Vista");
-};
+    res.send("editar orden Vista");
+  };
+  
+  OrdenController.EditarOrden = (req, res) => {
+    res.send("editar Vista");
+  };
+  
+  export default OrdenController;
 
-OrdenController.EditarOrden = (req, res) => {
-  res.send("editar Vista");
-};
-
-export default OrdenController;
