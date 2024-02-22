@@ -5,9 +5,11 @@ import indexrouters from "./router/indexrouter.js";
 import clienterouters from "./router/clienterouter.js";
 import empleadorouters from "./router/empleado-router.js";
 import ordenrouters from "./router/ordenrouter.js";
+
 import detalleordenrouters from "./router/detalleordenrouter.js";
 import usuariorouters from "./router/usuariorouter.js";
 import rolrouters from "./router/rolrouter.js";
+
 //iniciar puerto principal
 
 //routes
@@ -15,6 +17,7 @@ app.use("/", indexrouters);
 app.use("/api/cliente/", clienterouters);
 app.use("/api/empleado/", empleadorouters);
 app.use("/api/orden/", ordenrouters);
+
 app.use("/api/detalleorden/", detalleordenrouters);
 app.use("/api/usuario/", usuariorouters);
 app.use("/api/rol/", rolrouters);
