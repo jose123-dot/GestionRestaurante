@@ -16,6 +16,8 @@ app.use("/api/cliente/", clienterouters);
 app.use("/api/empleado/", empleadorouters);
 app.use("/api/orden/", ordenrouters);
 app.use("/api/detalleorden/", detalleordenrouters);
+app.use("/api/usuario/", usuariorouters);
+app.use("/api/rol/", rolrouters);
 
 // toca hacer los router de los demas
 app.listen(4000, () => console.log("Servidor ejecutado"));
