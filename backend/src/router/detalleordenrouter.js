@@ -2,11 +2,18 @@ import express from "express";
 const detalleordenrouters = express.Router();
 import detalleordenController from "../Controller/detalleorden-controler.js";
 
+//endpoint
 detalleordenrouters.get("/", detalleordenController.verDetalleOrden);
 
-detalleordenrouters.get("/agregar", detalleordenController.AgregarDetalleOrdenVista);
+detalleordenrouters.get(
+  "/agregar",
+  detalleordenController.AgregarDetalleOrdenVista
+);
 
-detalleordenrouters.post("/agregar", detalleordenController.AgregarDetalleOrden);
+detalleordenrouters.post(
+  "/agregar",
+  detalleordenController.AgregarDetalleOrden
+);
 
 detalleordenrouters.get(
   "/eliminar/detalleorden:id",
@@ -18,8 +25,14 @@ detalleordenrouters.delete(
   detalleordenController.EliminarDetalleOrden
 );
 
-detalleordenrouters.put("/Editar/detalleorden:id", detalleordenController.EditarDetalleOrden);
+detalleordenrouters.put(
+  "/Editar/detalleorden:id",
+  detalleordenController.EditarDetalleOrden
+);
 
-detalleordenrouters.get("/Editar/detalleorden:id", detalleordenController.EditarDetalleOrdenVista);
+detalleordenrouters.get(
+  "/Editar/detalleorden:id",
+  detalleordenController.EditarDetalleOrdenVista
+);
 
 export default detalleordenrouters;

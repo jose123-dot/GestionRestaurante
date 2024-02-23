@@ -1,36 +1,31 @@
 import express from "express";
-
+import empleadoController from "../Controller/empleado-router";
 const empleadorouters = express.Router();
 
-empleadorouters.get("/ver", (req, res) => {
-  res.send("ver empleado");
-});
+empleadorouters.get("/ver", empleadoController.verEmpleado);
 
 //router para agregar
-empleadorouters.get("/agregar", (req, res) => {
-  res.send("Agregar Empleado");
-});
+empleadorouters.get("/agregar", empleadoController.AgregarEmpleadoVista);
 
-empleadorouters.post("/agregar", (req, res) => {
-  res.send("agregar");
-});
+empleadorouters.post("/agregar", empleadoController.AgregarEmpleado);
 
 //eliminar
-empleadorouters.get("/eliminar/empleado:id", (req, res) => {
-  res.send("Eliminar Empleado");
-});
+empleadorouters.get(
+  "/eliminar/empleado:id",
+  empleadoController.EliminarEmpleadoVista
+);
 
-empleadorouters.delete("/eliminar/empleado:id", (req, res) => {
-  res.send("Eliminar Empleado");
-});
+empleadorouters.delete(
+  "/eliminar/empleado:id",
+  empleadoController.EliminarEmpleado
+);
 
 //actualizar
-empleadorouters.get("/actualizar/empleado:id", (req, res) => {
-  res.send("actualizar Empleado");
-});
+empleadorouters.get(
+  "/editar/empleado:id",
+  empleadoController.EditarEmpleadoVista
+);
 
-empleadorouters.put("/eliminar/empleado:id", (req, res) => {
-  res.send("Actualizar Empleado");
-});
+empleadorouters.put("/editar/empleado:id", empleadoController.EditarEmpleado);
 
 export default empleadorouters;

@@ -16,7 +16,7 @@ platorouter.post("/agregar", (req, res) => {
 });
 
 //eliminar
-platorouter.get("/eliminar/palto:id", (req, res) => {
+platorouter.get("/eliminar/plato:id", (req, res) => {
   res.send("Eliminar plato");
 });
 
