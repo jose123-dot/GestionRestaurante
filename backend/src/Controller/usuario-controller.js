@@ -24,7 +24,7 @@ UsuarioController.EditarUsuarioVista=(req, res) => {
     res.send("Editar usuario");
 };
 
-UsuarioController.EliminarUsuario=(req, res) => {
+UsuarioController.EditarUsuario=(req, res) => {
     res.send("Editar usuario");
 };
 

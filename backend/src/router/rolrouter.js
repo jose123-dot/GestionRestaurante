@@ -1,39 +1,25 @@
 import express from "express";
-
 const rolrouters = express.Router();
+import RolController from "../Controller/rol-controller.js"
 
 //Ver roles
 
-rolrouters.get("/Ver",(req, res) => {
-res.send("Ver Roles")
-});
+rolrouters.get("/Ver",RolController.verRol);
 
 //Agregar rol
-rolrouters.get("/Agregar", (req, res) =>{
-    res.send("Agregar Roles")
-});
+rolrouters.get("/Agregar", RolController.AgregarRolVista);
 
-rolrouters.post("/Agregar", (req, res) =>{
-    res.send("Agregar")
-});
+rolrouters.post("/Agregar",RolController.AgregarRol);
 
 //Eliminar rol
 
-rolrouters.get("/eliminar/rol:id", (req, res) =>{
-    res.send("Eliminar rol")
-});
+rolrouters.get("/eliminar/rol:id",RolController.EliminarRolVista);
 
-rolrouters.delete("/eliminar/rol:id", (req, res) =>{
-    res.send("Eliminar rol")
-});
+rolrouters.delete("/eliminar/rol:id",RolController.EliminarRol);
 
 //Actualizar rol
-rolrouters.get("/actualizar/rol:id", (req, res) =>{
-    res.send("Actualizar rol")
-});
+rolrouters.get("/actualizar/rol:id", RolController.EditarRolVista);
 
-rolrouters.get("/actualizar/rol:id", (req, res) =>{
-    res.put("Actualizar rol")
-});
+rolrouters.get("/actualizar/rol:id", RolController.EditarRol);
 
 export default rolrouters;
