@@ -1,36 +1,23 @@
 import express from "express";
+const mesarouters = express.Router();
+import mesaController from "../Controller/mesa-controller.js";
 
-const mesarouter = express.Router();
+mesarouters.get("/", mesaController.vermesa);
 
-mesarouter.get("/ver", (req, res) => {
-  res.send("ver mesa");
-});
+mesarouters.get("/agregar", mesaController.AgregarmesaVista);
 
-//router para agregar
-mesarouter.get("/agregar", (req, res) => {
-  res.send("Agregar mesa");
-});
+mesarouters.post("/agregar", mesaController.Agregarmesa);
 
-mesarouter.post("/agregar", (req, res) => {
-  res.send("agregar");
-});
+mesarouters.get(
+  "/eliminar/mesa:id",
+  mesaController.EliminarmesaVista
+);
 
-//eliminar
-mesarouter.get("/eliminar/mesa:id", (req, res) => {
-  res.send("Eliminar mesa");
-});
+mesarouters.delete(
+  "/eliminar/mesa:id",
+  mesaController.Eliminarmesa
+);
 
-mesarouter.delete("/eliminar/mesa:id", (req, res) => {
-  res.send("Eliminar mesa");
-});
+mesarouters.put("/Editar/mesa:id", mesaController.Editarmesa);
 
-//actualizar
-mesarouter.get("/actualizar/mesa:id", (req, res) => {
-  res.send("actualizar mesa");
-});
-
-mesarouter.put("/eliminar/mesa:id", (req, res) => {
-  res.send("Actualizar mesa");
-});
-
-export default mesarouter;
+export default mesarouters;
