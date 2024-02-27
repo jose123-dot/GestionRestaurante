@@ -1,13 +1,25 @@
 import "./App.css";
-import Menu from "./Componentes/menu/menu.jsx";
-import Header from "./Componentes/header/header.jsx";
-
+import Cliente from "./components/cliente/cliente";
+import Home from "./components/home/home";
+import Empleado from "./components/empleado/empleado";
+import Mesa from "./components/mesa/mesa";
+import Plato from "./components/plato/plato";
+import Orden from "./components/orden/orden";
+import Login from "./components/Login/login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <>
-      <Header></Header>
-      <Menu></Menu>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={Home}></Route>
+        <Route path="/cliente" Component={Cliente}></Route>
+        <Route path="/empleado" Component={Empleado}></Route>
+        <Route path="/mesa" Component={Mesa}></Route>
+        <Route path="/plato" Component={Plato}></Route>
+        <Route path="/Orden" Component={Orden}></Route>
+        <Route path="/login" Component={Login}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

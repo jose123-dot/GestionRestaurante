@@ -13,12 +13,9 @@ clienterouters.get(
   clienteController.EliminarClienteVista
 );
 
-clienterouters.delete(
-  "/eliminar/cliente:id",
-  clienteController.EliminarCliente
-);
+clienterouters.delete("/eliminar", clienteController.EliminarCliente);
 
-clienterouters.put("/Editar/cliente:id", clienteController.EditarCliente);
+clienterouters.put("/Editar", clienteController.EditarCliente);
 
 clienterouters.get("/Editar/cliente:id", clienteController.EditarClienteVista);
 
