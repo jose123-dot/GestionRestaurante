@@ -1,5 +1,6 @@
 import "./config/db.js";
-import express from "express";
+import express, { json } from "express";
+import morgan from "morgan";
 
 const app = express();
 
@@ -9,6 +10,10 @@ import clienterouters from "./router/clienterouter.js";
 import ordenrouters from "./router/ordenrouter.js";
 import platorouters from "./router/platorouter.js";
 import mesarouter from "./router/mesarouter.js";
+
+//middleware
+app.use(json());
+app.use(morgan("dev"));
 
 //routes
 //app.use("/", indexrouters);
