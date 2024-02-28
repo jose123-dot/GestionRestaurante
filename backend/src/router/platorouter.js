@@ -1,36 +1,23 @@
 import express from "express";
+const platorouters = express.Router();
+import platoController from "../Controller/plato-controller.js";
 
-const platorouter = express.Router();
+platorouters.get("/", platoController.verplato);
 
-platorouter.get("/ver", (req, res) => {
-  res.send("ver plato");
-});
+platorouters.get("/agregar", platoController.AgregarplatoVista);
 
-//router para agregar
-platorouter.get("/agregar", (req, res) => {
-  res.send("Agregar palto");
-});
+platorouters.post("/agregar", platoController.Agregarplato);
 
-platorouter.post("/agregar", (req, res) => {
-  res.send("agregar");
-});
+platorouters.get(
+  "/eliminar/plato:id",
+  platoController.EliminarplatoVista
+);
 
-//eliminar
-platorouter.get("/eliminar/plato:id", (req, res) => {
-  res.send("Eliminar plato");
-});
+platorouters.delete(
+  "/eliminar/plato:id",
+  platoController.Eliminarplato
+);
 
-platorouter.delete("/eliminar/plato:id", (req, res) => {
-  res.send("Eliminar plato");
-});
+platorouters.put("/Editar/plato:id", platoController.Editarplato);
 
-//actualizar
-platorouter.get("/actualizar/plato:id", (req, res) => {
-  res.send("actualizar plato");
-});
-
-platorouter.put("/eliminar/plato:id", (req, res) => {
-  res.send("Actualizar palto");
-});
-
-export default platorouter;
+export default platorouters;
