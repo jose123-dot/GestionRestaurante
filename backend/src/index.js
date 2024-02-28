@@ -2,6 +2,7 @@ import "./config/db.js";
 import express, { json } from "express";
 import { createRol } from "./libs/InitialSeptup.js";
 import morgan from "morgan";
+import cors from "cors";
 
 const app = express();
 
@@ -14,6 +15,7 @@ import mesarouter from "./router/mesarouter.js";
 import authrouter from "./router/auth-router.js";
 
 //middleware
+app.use(cors());
 app.use(json());
 createRol();
 
