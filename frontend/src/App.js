@@ -6,20 +6,25 @@ import Mesa from "./components/mesa/mesa";
 import Plato from "./components/plato/plato";
 import Orden from "./components/orden/orden";
 import Login from "./components/Login/login";
+import Register from "./components/Login/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthPrivider } from "./context/authContext";
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" Component={Home}></Route>
-        <Route path="/cliente" Component={Cliente}></Route>
-        <Route path="/empleado" Component={Empleado}></Route>
-        <Route path="/mesa" Component={Mesa}></Route>
-        <Route path="/plato" Component={Plato}></Route>
-        <Route path="/Orden" Component={Orden}></Route>
-        <Route path="/login" Component={Login}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthPrivider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={Home}></Route>
+          <Route path="/cliente" Component={Cliente}></Route>
+          <Route path="/empleado" Component={Empleado}></Route>
+          <Route path="/mesa" Component={Mesa}></Route>
+          <Route path="/plato" Component={Plato}></Route>
+          <Route path="/Orden" Component={Orden}></Route>
+          <Route path="/login" Component={Login}></Route>
+          <Route path="/register" Component={Register}></Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthPrivider>
   );
 }
 

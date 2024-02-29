@@ -6,7 +6,7 @@ const Menu = () => {
     <>
       {/* /* <!-- Sidebar --> */}
       <ul
-        className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        className="navbar-nav bg-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
         {/* <!-- Sidebar - Brand --> */}
@@ -91,6 +91,7 @@ const Menu = () => {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header">Cocina</h6>
+              {}
               <Link className="collapse-item" to="/mesa">
                 Mesas
               </Link>
