@@ -8,10 +8,10 @@ import Orden from "./components/orden/orden";
 import Login from "./components/Login/login";
 import Register from "./components/Login/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthPrivider } from "./context/authContext";
+import { AuthProvider } from "./context/authContext";
 function App() {
   return (
-    <AuthPrivider>
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" Component={Home}></Route>
@@ -24,7 +24,7 @@ function App() {
           <Route path="/register" Component={Register}></Route>
         </Routes>
       </BrowserRouter>
-    </AuthPrivider>
+    </AuthProvider>
   );
 }
 

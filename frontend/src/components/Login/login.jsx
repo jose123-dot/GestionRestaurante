@@ -1,8 +1,17 @@
-import React from "react";
-
+import { useForm } from "react-hook-form";
+import { useAuth } from "../../context/authContext";
 const Login = () => {
   //eventos
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
+  const { signin, errors: signinErrors } = useAuth();
+  const onSubmit = handleSubmit((data) => {
+    signin(data);
+  });
   //return
   return (
     <>
@@ -13,40 +22,53 @@ const Login = () => {
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                 className="img-fluid"
-                alt="imagen"
+                alt="description"
               />
             </div>
-            <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
               <h1>Login</h1>
-              <form>
-                {/* <!-- Email input --> */}
+              {signinErrors.map((error, i) => (
+                <div className="bg-red-500 p-2 text-white" key={i}>
+                  {error}
+                </div>
+              ))}
+              <form onSubmit={onSubmit}>
+                {/*   <!-- Email input --> */}
                 <div className="form-outline mb-4">
                   <input
                     type="email"
                     id="form1Example13"
                     className="form-control form-control-lg"
+                    {...register("email", { require: true })}
                   />
-                  <label className="form-label" for="form1Example13"></label>
+                  {errors.email && (
+                    <p className="text'red">Llene el Campo Email</p>
+                  )}
+                  <label className="form-label" htmlFor="form1Example13">
+                    Email address
+                  </label>
+                  {/* errores de validacion */}
                 </div>
-
-                {/* <!-- Password input --> */}
+                {/*   <!-- Password input --> */}
                 <div className="form-outline mb-4">
                   <input
                     type="password"
                     id="form1Example23"
                     className="form-control form-control-lg"
+                    {...register("password", { require: true })}
                   />
-                  <label className="form-label" for="form1Example23">
+                  {errors.password && (
+                    <p className="text'red">Por favor ponga la contraseña</p>
+                  )}
+                  <label className="form-label" htmlFor="form1Example23">
                     Password
                   </label>
                 </div>
-
-                {/* <!-- Submit button --> */}
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg btn-block"
                 >
-                  Sign in
+                  Sign up
                 </button>
               </form>
             </div>
