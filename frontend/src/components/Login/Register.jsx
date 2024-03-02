@@ -13,11 +13,10 @@ const Register = () => {
   const navegation = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) navegation("/");
+    if (isAuthenticated) navegation("/home");
   });
   const onSubmit = handleSubmit(async (values) => {
     signup(values);
-    console.log(isAuthenticated);
   });
   return (
     <>
@@ -34,6 +33,7 @@ const Register = () => {
             <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
               <form onSubmit={onSubmit}>
                 {/* username input*/}
+                <h1>Signup</h1>
                 <div className="form-outline mb-4">
                   <input
                     type="text"

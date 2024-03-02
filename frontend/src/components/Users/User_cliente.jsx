@@ -1,12 +1,12 @@
 import React from "react";
-import Menu from "../menu/menu.jsx";
+import MenuCliente from "../menu/menuCliente.jsx";
 import Header from "../header/header.jsx";
 
 const Cliente = () => {
   return (
     <>
       <div id="wrapper">
-        C<Menu></Menu>
+        C<MenuCliente></MenuCliente>
         <div id="content-wrapper">
           <div id="content">
             <Header></Header>

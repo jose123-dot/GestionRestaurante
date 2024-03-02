@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Login = () => {
   //eventos
   const {
@@ -8,8 +9,11 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const { signin, errors: signinErrors } = useAuth();
+  const navegation = useNavigate();
+  const { signin, isAuthenticated, errors: signinErrors } = useAuth();
+  useEffect(() => {
+    if (isAuthenticated) navegation("/home");
+  });
   const onSubmit = handleSubmit((data) => {
     signin(data);
   });
@@ -40,10 +44,10 @@ const Login = () => {
                     type="email"
                     id="form1Example13"
                     className="form-control form-control-lg"
-                    {...register("email", { require: true })}
+                    {...register("email", { required: true })}
                   />
                   {errors.email && (
-                    <p className="text'red">Llene el Campo Email</p>
+                    <p className="text-red-500">Llene el Campo Email</p>
                   )}
                   <label className="form-label" htmlFor="form1Example13">
                     Email address
@@ -56,10 +60,10 @@ const Login = () => {
                     type="password"
                     id="form1Example23"
                     className="form-control form-control-lg"
-                    {...register("password", { require: true })}
+                    {...register("password", { required: true })}
                   />
                   {errors.password && (
-                    <p className="text'red">Por favor ponga la contraseña</p>
+                    <p className="text-red">Por favor ponga la contraseña</p>
                   )}
                   <label className="form-label" htmlFor="form1Example23">
                     Password

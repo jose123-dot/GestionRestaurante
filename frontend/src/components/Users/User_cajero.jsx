@@ -1,18 +1,18 @@
 import React from "react";
-import Menu from "../menu/menu.jsx";
+import MenuCajero from "../menu/menuCajero.jsx";
 import Header from "../header/header.jsx";
 
-const Cliente = () => {
+const Cajero = () => {
   return (
     <>
       <div id="wrapper">
-        C<Menu></Menu>
+        C<MenuCajero></MenuCajero>
         <div id="content-wrapper">
           <div id="content">
             <Header></Header>
 
             <div className="container-fluid">
-              <h1>Cliente</h1>
+              <h1>Cajero</h1>
             </div>
           </div>
         </div>
@@ -21,4 +21,4 @@ const Cliente = () => {
   );
 };
 
-export default Cliente;
+export default Cajero;
